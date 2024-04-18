@@ -1,0 +1,11 @@
+sequenceDiagram title Exercise 0.6
+
+    participant browser
+    participant server
+
+    note right of browser: The user types an input and clicks on the Save button
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa  <br>  [{"content": "newMessage, "date": "2024-4-1"}]
+    activate server
+    server-->>browser: Note created (Status code 201)
+    deactivate server
